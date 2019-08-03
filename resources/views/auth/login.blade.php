@@ -1,87 +1,84 @@
-<!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.15
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
+<!doctype html>
+<html lang="en" dir="ltr">
 
-<html lang="en">
+  <!-- En-tête -->
   <head>
-    <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
     <title>ASFLA - Authentification</title>
 
-    <!-- Icons-->
-    <link href="{{ asset('dist/coreui/src/icons/css/coreui-icons.min.css') }}" rel="stylesheet">
-    <!--<link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">-->
-    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">-->
-    <!--<link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">-->
-
-    <!-- Main styles for this application-->
-    <link href="{{ asset('dist/coreui/src/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/coreui/src/vendors/pace-progress/css/pace.min.css') }}" rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+    <script src="{{ asset('dist/tabler-gh-pages/assets/js/require.min.js') }}"></script>
 
     <script>
-      window.dataLayer = window.dataLayer || [];
+      requirejs.config({
+          baseUrl: '.'
+      });
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
     </script>
+    <!-- Dashboard Core -->
+    <link href="{{ asset('dist/tabler-gh-pages/assets/css/dashboard.css') }}" rel="stylesheet" />
+    <script src="{{ asset('dist/tabler-gh-pages/assets/js/dashboard.js') }}"></script>
+
+    <!-- c3.js Charts Plugin -->
+    <link href="{{ asset('dist/tabler-gh-pages/assets/plugins/charts-c3/plugin.css') }}" rel="stylesheet" />
+    <script src="{{ asset('dist/tabler-gh-pages/assets/plugins/charts-c3/plugin.js') }}"></script>
+
+    <!-- Google Maps Plugin -->
+    <link href="{{ asset('dist/tabler-gh-pages/assets/plugins/maps-google/plugin.css') }}" rel="stylesheet" />
+    <script src="{{ asset('dist/tabler-gh-pages/assets/plugins/maps-google/plugin.js') }}"></script>
+
+    <!-- Input Mask Plugin -->
+    <script src="{{ asset('dist/tabler-gh-pages/assets/plugins/input-mask/plugin.js') }}"></script>
+
   </head>
-  <body class="app flex-row align-items-center">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card-group">
-            <div class="card p-4">
 
-              <form method="POST" action="{{ route('login') }}">
+  <body class="">
+    <div class="page">
+      <div class="page-single">
+        <div class="container">
+          <div class="row">
+            <div class="col col-login mx-auto">
+              <div class="text-center mb-6">
+                <img src="./assets/brand/tabler.svg" class="h-6" alt="">
+              </div>
+              <form class="card" action="{{ route('login') }}" method="post">
+                <div class="card-body p-6">
+                  <div class="card-title">Identification</div>
 
-                <div class="card-body">
-                  <h1>Identification</h1>
-                  <p class="text-muted">Connectez vous avec votre compte</p>
-
-                  <!-- Identifiant -->
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fas fa-user"></i>
-                      </span>
-                    </div>
+                  <!-- Identifiant - adresse e-mail -->
+                  <div class="form-group">
+                    <label class="form-label">Adresse e-mail</label>
                     <input id="email" type="email" placeholder="Identifiant" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-
                   </div>
 
                   <!-- Mot de passe -->
-                  <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </div>
-                    <input id="password" type="password" placeholder="Mot de passe" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                  <div class="form-group">
+                    <label class="form-label">
+                      Mot de passe
+                      <a href="./forgot-password.html" class="float-right small">Mot de passe oublié</a>
+                    </label>
 
+                    <input id="password" type="password" placeholder="Mot de passe" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -90,42 +87,24 @@
 
                   </div>
 
-                </form>
-
-                <!-- Contrôles -->
-                <div class="row">
-                  <div class="col-6">
-                    <button class="btn btn-primary px-4" type="submit">Se connecter</button>
+                  <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" />
+                      <span class="custom-control-label">Se souvenir de moi</span>
+                    </label>
                   </div>
-                  <div class="col-6 text-right">
-                    <button class="btn btn-link px-0" type="button">Mot de passe oublié?</button>
+                  <div class="form-footer">
+                    <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
                   </div>
                 </div>
-              </div>
-
-            </div>
-            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
-              <div class="card-body text-center">
-                <div>
-                  <h2>Inscription</h2>
-                  <p>Créez un compte et rejoignez l'association des sages-femmes libérales d'Alsace.</p>
-                  <button class="btn btn-primary active mt-3" type="button">S'inscrire!</button>
-                </div>
+              </form>
+              <div class="text-center text-muted">
+                Vous n'avez pas encore de compte ? <a href="./register.html">Créer un compte</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- CoreUI and necessary plugins-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="node_modules/pace-progress/pace.min.js"></script>
-    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/f8c70863ce.js"></script>
-
   </body>
 </html>
