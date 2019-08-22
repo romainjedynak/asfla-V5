@@ -89,7 +89,7 @@
                 </div>
                 <div class="dropdown">
                   <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                    <span class="avatar" style="background-image: url(/asfla/public/dist/tabler-gh-pages/demo/faces/female/25.jpg)"></span>
+                    <span class="avatar" style="background-image: url(/asfla/public/img/profile/jedynak.jpg)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default">Caroline JEDYNAK</span>
                       <small class="text-muted d-block mt-1">Administrateur</small>
