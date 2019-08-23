@@ -172,7 +172,7 @@
                   <a href="#"><img class="card-img-top" src="/asfla/public/img/articles/cigogne.jpg" alt="Ouverture du site Web"></a>
                   <div class="card-body d-flex flex-column">
                     <h4><a href="#">Ouverture du site Web</a></h4>
-                    <div class="text-muted">Le nouveau Site Web est ouvert. Vous retrouverez tous les services dont vous avez besoin !</div>
+                    <div class="text-muted">Le nouveau Site Web est ouvert ! Vous y trouverez tous les services dont vous avez besoin pour pratiquer votre profession dans la région</div>
                     <div class="d-flex align-items-center pt-5 mt-auto">
                       <div class="avatar avatar-md mr-3" style="background-image: url(/asfla/public/img/profile/jedynak.jpg)"></div>
                       <div>
