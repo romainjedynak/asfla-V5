@@ -146,12 +146,12 @@
 
                   <!-- Retour à la page d'accueil -->
                   <li class="nav-item">
-                    <a href="{{ route('welcome') }}" class="nav-link active"><i class="fe fe-home"></i> Accueil</a>
+                    <a href="{{ route('welcome') }}" class="nav-link"><i class="fe fe-home"></i> Accueil</a>
                   </li>
 
                   <!-- Gestion des membres -->
                   <li class="nav-item">
-                    <a href="{{ route('membres') }}" class="nav-link"><i class="fe fe-users"></i> Membres</a>
+                    <a href="{{ route('membres') }}" class="nav-link active"><i class="fe fe-users"></i> Membres</a>
                   </li>
 
                 </ul>
@@ -159,41 +159,88 @@
             </div>
           </div>
         </div>
+        <div class="my-3 my-md-5">
+          <div class="container">
 
-        <div class="container">
+            <!-- Titre de la page -->
             <div class="page-header">
               <h1 class="page-title">
-                Nouveautés/informations
+                Gestion des membres
               </h1>
             </div>
+
             <div class="row row-cards row-deck">
-              <div class="col-sm-6 col-xl-3">
+              <div class="col-12">
                 <div class="card">
-                  <a href="#"><img class="card-img-top" src="/asfla/public/img/articles/cigogne.jpg" alt="Ouverture du site Web"></a>
-                  <div class="card-body d-flex flex-column">
-                    <h4><a href="#">Ouverture du site Web</a></h4>
-                    <div class="text-muted">Le nouveau Site Web est ouvert. Vous retrouverez tous les services dont vous avez besoin !</div>
-                    <div class="d-flex align-items-center pt-5 mt-auto">
-                      <div class="avatar avatar-md mr-3" style="background-image: url(/asfla/public/img/profile/jedynak.jpg)"></div>
-                      <div>
-                        <a href="./profile.html" class="text-default">Caroline JEDYNAK</a>
-                        <small class="d-block text-muted">Il y a 3 jours</small>
-                      </div>
-                      <!--
-                        <div class="ml-auto text-muted">
-                          <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i></a>
-                        </div>
-                      -->
-                    </div>
+
+                  <!-- Titre du tableau -->
+                  <div class="card-header">
+                    <h3 class="card-title">Liste des membres</h3>
+                    <button type="submit" class="btn btn-outline-primary btn-sm ml-auto">Ajouter</button>
+                  </div>
+
+                  <div class="table-responsive">
+                    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                      <thead>
+                        <tr>
+                          <th class="text-center w-1"><i class="icon-people"></i></th>
+                          <th>Membre</th>
+                          <th>Adresse mail</th>
+                          <th>Département</th>
+                          <th>Adresse</th>
+                          <th class="text-center">Statut</th>
+                          <th class="text-center"><i class="icon-settings"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">
+                            <div class="avatar d-block" style="background-image: url(/asfla/public/img/profile/jedynak.jpg)">
+                              <!--<span class="avatar-status bg-green"></span>-->
+                            </div>
+                          </td>
+                          <td>
+                            <div>Caroline GRIMA</div>
+                            <!--
+                              <div class="small text-muted">
+                                Registered: Mar 19, 2018
+                              </div>
+                            -->
+                          </td>
+                          <td>
+                            <div>carolinejedynak.sagefemme@gmail.com</div>
+                          </td>
+                          <td>
+                            <div>Bas-rhin</div>
+                          </td>
+                          <td>
+                            <div>10 rue du cimetière</div>
+                            <div>67600 Ebersheim</div>
+                          </td>
+                          <td class="text-center">
+                            <span class="badge badge-primary">Actif</span>
+                          </td>
+                          <td class="text-center">
+                            <div class="item-action dropdown">
+                              <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                              <div class="dropdown-menu dropdown-menu-right">
+                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-info"></i> Consulter</a>
+                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Modifier</a>
+                                <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-trash"></i> Supprimer</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
 
             </div>
           </div>
-
-
-
+        </div>
       </div>
 
       <footer class="footer">
