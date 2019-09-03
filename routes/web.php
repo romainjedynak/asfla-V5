@@ -10,15 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/membres', function () {
-    return view('membres');
-})->name('membres');
+/* Agenda */
+Route::get('/agenda/index', function () {
+    return view('agenda/index');
+})->name('agenda.index');
 
-Auth::routes();
+/* Gestion des documents */
+Route::get('/document/index', function () {
+    return view('document/index');
+})->name('document.index');
+
+/* Gestion des membres */
+Route::get('/membre/index', function () {
+    return view('membre/index');
+})->name('membre.index');
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');

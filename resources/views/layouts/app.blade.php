@@ -146,12 +146,22 @@
 
                   <!-- Retour à la page d'accueil -->
                   <li class="nav-item">
-                    <a href="{{ route('welcome') }}" class="nav-link active"><i class="fe fe-home"></i> Accueil</a>
+                    <a href="{{ route('welcome') }}" class="nav-link @yield('page-lien-welcome-active')"><i class="fe fe-home"></i> Accueil</a>
+                  </li>
+
+                  <!-- Agenda -->
+                  <li class="nav-item">
+                    <a href="{{ route('agenda.index') }}" class="nav-link @yield('page-lien-agenda-active')"><i class="fe fe-calendar"></i> Agenda</a>
+                  </li>
+
+                  <!-- Documents -->
+                  <li class="nav-item">
+                    <a href="{{ route('document.index') }}" class="nav-link @yield('page-lien-document-active')"><i class="fe fe-file"></i> Documents</a>
                   </li>
 
                   <!-- Gestion des membres -->
                   <li class="nav-item">
-                    <a href="{{ route('membres') }}" class="nav-link"><i class="fe fe-users"></i> Membres</a>
+                    <a href="{{ route('membre.index') }}" class="nav-link @yield('page-lien-membre-active')"><i class="fe fe-users"></i> Membres</a>
                   </li>
 
                 </ul>
@@ -161,38 +171,14 @@
         </div>
 
         <div class="container">
+
             <div class="page-header">
               <h1 class="page-title">
-                Nouveautés/informations
+                @yield('page-titre')
               </h1>
             </div>
-            <div class="row row-cards row-deck">
-              <div class="col-sm-6 col-xl-3">
-                <div class="card">
-                  <a href="#"><img class="card-img-top" src="/asfla/public/img/articles/cigogne.jpg" alt="Ouverture du site Web"></a>
-                  <div class="card-body d-flex flex-column">
-                    <h4><a href="#">Ouverture du site Web</a></h4>
-                    <div class="text-muted">Le nouveau Site Web est ouvert ! Vous y trouverez tous les services dont vous avez besoin pour pratiquer votre profession dans la région</div>
-                    <div class="d-flex align-items-center pt-5 mt-auto">
-                      <div class="avatar avatar-md mr-3" style="background-image: url(/asfla/public/img/profile/jedynak.jpg)"></div>
-                      <div>
-                        <a href="./profile.html" class="text-default">Caroline JEDYNAK</a>
-                        <small class="d-block text-muted">Il y a 3 jours</small>
-                      </div>
-                      <!--
-                        <div class="ml-auto text-muted">
-                          <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i></a>
-                        </div>
-                      -->
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-            </div>
-          </div>
-
-
+            @yield('page-contenu')
 
       </div>
 
