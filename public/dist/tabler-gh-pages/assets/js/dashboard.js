@@ -19,6 +19,8 @@ paths: {
 'vector-map-de': '/asfla/public/dist/tabler-gh-pages/assets/js/vendors/jquery-jvectormap-de-merc',
 'vector-map-world': '/asfla/public/dist/tabler-gh-pages/assets/js/vendors/jquery-jvectormap-world-mill',
 'circle-progress': '/asfla/public/dist/tabler-gh-pages/assets/js/vendors/circle-progress.min',
+'fullcalendar-core': '/asfla/public/dist/fullcalendar/packages/core/main.min',
+'fullcalendar-daygrid': '/asfla/public/dist/fullcalendar/packages/daygrid/main.min',
 }
 });
 window.tabler = {
