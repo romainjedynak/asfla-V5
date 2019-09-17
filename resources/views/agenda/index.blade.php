@@ -13,7 +13,20 @@ Agenda
 <!-- Contenu de la page -->
 @section('page-contenu')
 
-<div id="calendar"></div>
+<div class="row row-cards row-deck">
+  <div class="col-12">
+    <div class="card">
+
+      <div class="card-header">
+
+        <div id="calendar"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 @endsection
 
@@ -21,17 +34,28 @@ Agenda
 @section('javascript')
 
 <script>
-  require(['fullcalendar-core', 'fullcalendar-daygrid', 'jquery'], function ($) {
-    document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+  require(['fullcalendar', 'moment', 'fullcalendar-locale', 'jquery'], function () {
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'dayGrid' ],
-      defaultView: 'dayGridMonth'
-    });
 
-    calendar.render();
-    });
+    $(document).ready(function() {
+
+  //Initialisation du calendrier
+  $('#calendar').fullCalendar({
+
+    //Gestion de la langue (locale FR)
+    locale: 'fr',
+
+    events: [
+    {
+      title  : 'Assemblée générale',
+      start  : '2019-09-27'
+    },
+    ]
+
+  })
+
+});
+
   });
 </script>
 
